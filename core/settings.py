@@ -14,17 +14,17 @@ load_dotenv()
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', False)
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', "django-insecure-4$lurg(q+7n&q&*aq52hzdbd7s4hjuc$pts@kf0-j+(%6^ic3$")
 if not SECRET_KEY:
     raise ValueError("DJANGO_SECRET_KEY environment variable is required.")
 
 
 try:
     # use 0 for development and 1 for production
-    DJANGO_DEBUG = os.getenv('DJANGO_DEBUG')
+    DJANGO_DEBUG = os.getenv('DJANGO_DEBUG', '1')
     DEBUG = True if bool(int(DJANGO_DEBUG)) is True else False
 except ValueError:
-    DEBUG = False
+    DEBUG = True
 
 
 ALLOWED_HOSTS = []
