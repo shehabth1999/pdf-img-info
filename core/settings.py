@@ -42,8 +42,10 @@ INSTALLED_APPS = [
 
     # package added
     'rest_framework',
+    'drf_yasg',
 
     # apps
+    'pdf_img_handler'
 ]
 
 MIDDLEWARE = [
