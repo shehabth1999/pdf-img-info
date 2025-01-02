@@ -52,7 +52,7 @@ class Base64FileField(serializers.Field):
             
             return content_file
         except Exception as e:
-            raise serializers.ValidationError(f"Error decoding base64 file: {str(e)}")
+            raise serializers.ValidationError("Invalid base64 string")
 
     def to_representation(self, value):
         """
